@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retoure</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/logo/" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="assets/fonts.css">
 
     <script src="script.js"></script>
@@ -18,8 +18,8 @@
             <div class="font-24px">Retoure</div>
         </div>
     </header>
-
     <main>
+
         <form action="form-handler.php" method="post" onsubmit="return inputValidation()"  enctype="multipart/form-data" novalidate>
             <section class="d-flex column gap-8 p-32">
                 <div class="d-flex column gap-4 h-60">
@@ -28,6 +28,7 @@
                 </div>
                 <div class="d-flex column gap-4 h-60">
                     <input class="form-control" type="text" name="stringInput[]" id="" placeholder="Kundenname" min="1" oninput="inputValidationString(this)" required>
+                    <div class="error-message d-none">Bitte nennen Sie uns Ihre Organisation</div>
                 </div>
                 <div class="d-flex column gap-4 h-60">
                     <input class="form-control" type="text" name="integerInput[]" id="" placeholder="Lieferscheinnummer" min="6" max="7"oninput="inputValidationNumber(this)"  required>
@@ -62,12 +63,14 @@
                         <input class="form-control" type="file" name="fileInput" id="disposal-file" placeholder="" accept=".pdf" required >
                     </div>
                 </div>
+
             </section>
 
             <section class="d-flex column gap-8 p-32">
                 <p class="font-24px">Ihre Kontaktdaten für Rückfragen</p>
                 <div class="d-flex column gap-4 h-60">
                     <input class="form-control" type="text" name="stringInput[]" id="contact-name" placeholder="Name" oninput="inputValidationString(this)" required>
+                    <div class="error-message d-none">Bitte teilen Sie uns Ihren Namen mit</div>
                 </div>
                 
                 <div class="d-flex column gap-4 h-60">
@@ -85,6 +88,7 @@
               <button class="submit-btn hover" type="submit" >Senden</button>
             </div>
         </form>
+
 
     </main>
     <footer>

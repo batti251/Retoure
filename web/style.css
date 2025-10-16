@@ -20,7 +20,7 @@ header {
 .logo {
     height: 48px;
     width: 48px;
-    background-image: url('assets/logo/');
+    background-image: url('');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

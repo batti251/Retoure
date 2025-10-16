@@ -44,10 +44,12 @@ function inputValidationPhone(obj){
 }
 
 function inputValidationString(obj) {
+    let errorMessage = obj.nextElementSibling
     if (!stringValidation(obj)) {
-        obj.classList.remove('success-border')
+        addErrorUI(obj)
     } else 
-        obj.classList.add('success-border')
+        errorMessage.classList.add('d-none');
+        addSuccessUI(obj)
 }
 
 
@@ -107,17 +109,21 @@ function inputValidation(){
     let isValidMail = [...inputMail].every((e) => {return mailValidation(e)})
     let isValidFile = fileValidation(inputFile)
     let isValidDropdown = dropdownValidation(dropdown)
-    
+
     return allValid(isValidString,isValidMail,isValidPhone,isValidInteger, isValidFile, isValidDropdown)
 }
 
 function allValid(isValidString,isValidMail,isValidPhone,isValidInteger,isValidFile, isValidDropdown){
-   // console.log(isValidString,isValidMail,isValidPhone,isValidInteger,isValidFile, isValidDropdown);
      if (isValidString && isValidMail && isValidPhone && isValidInteger && isValidFile && isValidDropdown){
-         console.log("abgeschickt");
          return true
-     }   else {console.log("nicht alles ausgefüllt");
+     }   else {showErrorMessages();
         return false}
  }
 
+ function showErrorMessages() {
+    let inputArray = document.getElementsByTagName('input')
+    let filteredArray = [...inputArray].filter((e) => e.value == "" && e.type != 'file')
+    filteredArray.forEach((e) => {e.nextElementSibling.classList.remove('d-none')});
+    filteredArray.forEach((e) => {e.classList.remove('success-border') && e.classList.add('error-border')});
+    }
 
