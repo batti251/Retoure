@@ -12,15 +12,17 @@ function validate_inputs($customerno, $deliverynote, $contactnumber, $contactmai
         $isMail     === false ||
         $isReason   === false) {
         echo "Mindestens eine Eingabe ist ungültig.";
-        return false;
+        return false; // oder einfach 'return;' um nur abzubrechen
     }
         echo "Alle Eingaben sind korrekt.";
     return true;
 }
 
-
+ 
 function translateReason($reason){
     $reasons = ['reason-1', 'reason-2', 'reason-3', 'miscellaneous'];
+    echo $reason;
+    echo $reasons;
     if (in_array($reason, $reasons)){
         return $reason = "Ware beschädigt";
     } else  if (in_array($reason, $reasons)) {

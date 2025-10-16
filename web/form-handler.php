@@ -32,6 +32,7 @@ $values = [$customerno, $customername, $deliverynote, $reason, $miscellaneous, $
 
 
 
+ // build email content
     $subject = "Neue Retoure von $customername (Kd.-Nr. $customerno)";
     $body = "
         <h3>Neue Anfrage</h3>
@@ -47,25 +48,44 @@ $values = [$customerno, $customername, $deliverynote, $reason, $miscellaneous, $
     ";
 
 
+  // Reply-To from contact info
     $fromName  = $contactname ?: $customername ?: 'Webformular';
     $fromEmail = $contactmail ?: 'noreply@example.com';
 
     
+// upload single PDF from fileInput
 [$okUpload, $uploadResult] = uploadFile($customerno, $deliverynote);
 if (!$okUpload) {
-    echo "Upload-Fehler: " . htmlspecialchars($uploadResult);
+    echo "❌ Upload-Fehler: " . htmlspecialchars($uploadResult);
 } else {
      $attachments[] = [
         'path' => $uploadResult,
         'name' => basename($uploadResult),
     ];
+} 
+// upload multiple images from fileInputs[]
+if (isset($_FILES['fileInputs'])) {
+    $imgResults = uploadImageFiles($customerno, $deliverynote, 'fileInputs');
+    foreach ($imgResults as $res) {
+        [$ok, $msgOrPath] = $res;
+        if ($ok) {
+            $attachments[] = [
+                'path' => $msgOrPath,
+                'name' => basename($msgOrPath),
+            ];
+        } else {
+            echo "Upload-Fehler (Bilder): " . htmlspecialchars($msgOrPath);
+        }
+    }
 }
+ 
 
 
+    // send mail
+    // redirects to success page if mail was sent
     [$ok, $msg] =  sendMail($fromName, $fromEmail, $subject, $body, $attachments) ;
-   $_SESSION['flash_ok'] = 'Ihre Anfrage wurde erfolgreich übermittelt.';
-header('Location: /danke.php', true, 303);
+    $_SESSION['flash_ok'] = 'Ihre Anfrage wurde erfolgreich übermittelt.';
+header('Location: /success.html', true, 303);
 exit;
 }
 ?>
-
