@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+main {
+    padding: 0 16px;
+}
+
+header {
+    height: 20vh;
+    background-color: #008565 !important;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.logo {
+    height: 48px;
+    width: 48px;
+    background-image: url('');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+form {
+    max-width: 640px;
+}
+
+p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.textbox {
+    height: 100px;
+}
+
+input[type="file"]::file-selector-button {
+    border: 2px solid #008565;
+    height: 100%;
+    border-radius: 0.2em;
+    background-color: unset;
+}
+
+input[type="file"]::file-selector-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px 4px rgba(0, 133, 101, 0.4);
+}
+
+
+input[type="file"].form-control[required]:valid{
+    border: 1px solid #008565;
+}
+
+.form-control {
+    display: block;
+    width: 85%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #495057;
+    border-radius: .25rem;
+}
+
+.form-control[required]{
+    border: 1px solid red;
+}
+
+
+select.form-control:valid{
+    border: 1px solid #008565;
+}
+
+.error-message{
+    color: rgb(211, 28, 28);
+}
+
+.success-border{
+    border-color:  #008565 !important;
+}
+
+.error-border{
+    border: 1px solid red;
+}
+
+footer {
+    height: 5%;
+    background-color: #5c666f;
+    padding: 16px 32px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.submit-btn {
+    border: 2px solid rgb(0, 133, 101);
+    height: 100%;
+    border-radius: 0.2em;
+    background-color: rgb(0, 133, 101);
+    color: white;
+}
+
+.hover:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 4px rgba(0, 133, 101, 0.4);
+}
+
+.footer-links > a{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links > a:visited{
+    color: black;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.gap-4 {
+    gap: 4px;
+}
+
+.gap-8 {
+    gap: 8px;
+}
+
+.gap-16 {
+    gap: 16px;
+}
+
+.gap-24 {
+    gap: 24px;
+}
+
+.p-32 {
+    padding: 32px 32px;
+}
+
+.w-96 {
+    width: 96px;
+}
+
+.h-60 {
+    height: 60px;
+}
