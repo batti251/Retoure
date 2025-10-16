@@ -85,7 +85,7 @@ if (isset($_FILES['fileInputs'])) {
     // redirects to success page if mail was sent
     [$ok, $msg] =  sendMail($fromName, $fromEmail, $subject, $body, $attachments) ;
     $_SESSION['flash_ok'] = 'Ihre Anfrage wurde erfolgreich übermittelt.';
-header('Location: /success.html', true, 303);
+header('Location: /confirmation.php', true, 303);
 exit;
 }
 ?>

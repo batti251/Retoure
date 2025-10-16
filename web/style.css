@@ -141,8 +141,16 @@ footer {
     align-items: center;
 }
 
+.d-column {
+    flex-direction: column;
+}
+
 .column {
     flex-direction: column;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .gap-4 {
