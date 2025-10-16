@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retoure</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo/" type="image/x-icon">
     <link rel="stylesheet" href="assets/fonts.css">
 
     <script src="script.js"></script>
@@ -20,7 +20,6 @@
     </header>
 
     <main>
-
         <form action="form-handler.php" method="post" onsubmit="return inputValidation()"  enctype="multipart/form-data" novalidate>
             <section class="d-flex column gap-8 p-32">
                 <div class="d-flex column gap-4 h-60">
@@ -49,21 +48,26 @@
             
                 <div class="upload-wrap">
                     <div class="upload-picture-container">
-                        <p class="font-24px">bitte hier Bilder hochladen</p>
-                        <input class="form-control" type="file" name="fileInputs[]"  multiple placeholder="">
+                        <div class="margin-block d-flex d-column">
+                        <p class="font-24px unset-margin">Bitte hier Bilder hochladen</p>
+                        <i>unterstützte Formate: .jpeg, .jpg, .png, .webp, .heic, .heif, .avif</i>
+                        </div>
+                        <input class="form-control" type="file" name="fileInputs[]"  multiple accept=".jpeg,.jpg,.png, .webp,.heic,.heif,.avif" placeholder="" required>
                     </div>
                     <div class="upload-disposal-receipt">
-                        <p class="font-24px">Bitte hier Entsorgungsbeleg hochladen</p>
-                        <input class="form-control" type="file" name="fileInput" id="disposal-file" placeholder="" required>
+                        <div class="margin-block d-flex d-column">
+                        <p class="font-24px unset-margin">Bitte hier Entsorgungsbeleg hochladen</p>
+                        <i>unterstütztes Format: .pdf</i>
+                        </div>
+                        <input class="form-control" type="file" name="fileInput" id="disposal-file" placeholder="" accept=".pdf" required >
                     </div>
                 </div>
-
             </section>
 
             <section class="d-flex column gap-8 p-32">
                 <p class="font-24px">Ihre Kontaktdaten für Rückfragen</p>
                 <div class="d-flex column gap-4 h-60">
-                    <input class="form-control" type="text" name="stringInput[]" id="contact-name" placeholder="Name"oninput="inputValidationString(this)" required>
+                    <input class="form-control" type="text" name="stringInput[]" id="contact-name" placeholder="Name" oninput="inputValidationString(this)" required>
                 </div>
                 
                 <div class="d-flex column gap-4 h-60">
@@ -81,7 +85,6 @@
               <button class="submit-btn hover" type="submit" >Senden</button>
             </div>
         </form>
-
 
     </main>
     <footer>

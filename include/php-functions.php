@@ -62,7 +62,7 @@ function uploadImageFiles($customerno, $deliverynote, string $fieldName = 'fileI
 
     // array to collect img-file-results
     $results = [];
-
+    
     // process each uploaded file
     // 
     foreach (normalizeFilesArray($_FILES[$fieldName]) as $f) {

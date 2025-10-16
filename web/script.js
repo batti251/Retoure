@@ -112,8 +112,7 @@ function inputValidation(){
 }
 
 function allValid(isValidString,isValidMail,isValidPhone,isValidInteger,isValidFile, isValidDropdown){
-    console.log(isValidString,isValidMail,isValidPhone,isValidInteger,isValidFile, isValidDropdown);
-    
+   // console.log(isValidString,isValidMail,isValidPhone,isValidInteger,isValidFile, isValidDropdown);
      if (isValidString && isValidMail && isValidPhone && isValidInteger && isValidFile && isValidDropdown){
          console.log("abgeschickt");
          return true

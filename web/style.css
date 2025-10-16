@@ -20,7 +20,7 @@ header {
 .logo {
     height: 48px;
     width: 48px;
-    background-image: url('');
+    background-image: url('assets/logo/');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,6 +34,10 @@ p {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.5;
+}
+
+i{
+    font-size: 0.75rem;
 }
 
 .textbox {
@@ -179,4 +183,13 @@ footer {
 
 .h-60 {
     height: 60px;
+}
+
+.margin-block{
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+.unset-margin{
+    margin: 0;
 }
