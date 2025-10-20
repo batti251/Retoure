@@ -16,24 +16,36 @@ if (!$msg) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo/" type="image/x-icon">
     <link rel="stylesheet" href="assets/fonts.css">
+    <script src="../script.js"></script>
 </head>
 <body>
-    <header class="d-flex d-center">
-        <div class="d-flex gap-24">
-            <div class="logo"></div>
-            <div class="font-24px"></div>
+     <div class="grid">
+        <div class="logo">
+            <img src="assets/logo/" alt="">
         </div>
-    </header>
+        <div class="title-head d-flex d-center">
+            <h1>Retoure</h1>
+        </div>
+        <div class="side"></div>
 
-
-    <div class="d-flex d-center d-column text-center">
-        <h1>Vielen Dank</h1>
+    <main class="d-flex d-center d-column text-center">
+        <h1 class="t-black">Vielen Dank</h1>
         <p>Ihre Anfrage wurde an uns übermittelt
             <br><br>
             Sie können die Seite schließen
-        </p>
+            <br><br>
+             Oder Besuchen Sie gerne unsere <a href="http://">Website</a>
+            </p>
+    </main>
+
+        <footer>
+        <div class="footer-links gap-24">
+          <a href="/assets/html/legal-notice.html">Impressum</a>
+          <a href="/assets/html/policy-note.html">Datenschutzerklärung</a>
+        </div>
+    </footer>
     </div>
 </body>
 </html>

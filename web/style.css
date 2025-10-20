@@ -1,195 +1,298 @@
 body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
-
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
-
-main {
-    padding: 0 16px;
+.grid {
+  display: grid;
+  grid-template-areas:
+    "logo head side"
+    "logo content side"
+    "footer footer footer";
+  grid-template-columns: 25% auto auto;
 }
 
-header {
-    height: 20vh;
-    background-color: #008565 !important;
-    font-size: 2rem;
-    font-weight: 400;
+.title-head {
+  grid-area: head;
+  display: grid;
+  height: 10vh;
+  background-color: #008565 !important;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.side {
+  grid-area: side;
+  display: grid;
+  height: 10vh;
+  background-color: #008565 !important;
+}
+
+h1 {
+  color: white;
+}
+
+h3 {
+  font-weight: 400;
 }
 
 .logo {
-    height: 48px;
-    width: 48px;
-    background-image: url('');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: #008565 !important;
 }
 
-form {
-    max-width: 640px;
+.logo > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 0 0 8px;
 }
 
 p {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
-i{
-    font-size: 0.75rem;
+i {
+  font-size: 0.75rem;
+}
+
+main {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .textbox {
-    height: 100px;
+  height: 100px;
 }
 
 input[type="file"]::file-selector-button {
-    border: 2px solid #008565;
-    height: 100%;
-    border-radius: 0.2em;
-    background-color: unset;
+  border: 2px solid #008565;
+  height: 100%;
+  border-radius: 0.25rem;
+  background-color: unset;
 }
 
 input[type="file"]::file-selector-button:hover {
-    cursor: pointer;
-    box-shadow: 0 0 4px 4px rgba(0, 133, 101, 0.4);
+  cursor: pointer;
+  box-shadow: 0 0 4px 4px rgba(0, 133, 101, 0.4);
 }
 
+input[type="file"].form-control[required]:valid {
+  border: 1px solid #008565;
+}
 
-input[type="file"].form-control[required]:valid{
-    border: 1px solid #008565;
+button[type="submit"] {
+  height: 52px;
+  font-size: 1.5rem;
+  border: 2px solid rgb(0, 133, 101);
+  border-radius: 0.2em;
+  background-color: rgb(0, 133, 101);
+  color: white;
 }
 
 .form-control {
-    display: block;
-    width: 85%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #495057;
-    border-radius: .25rem;
+  display: block;
+  width: 330px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #495057;
+  border-radius: 0.25rem;
 }
 
-.form-control[required]{
-    border: 1px solid red;
+.form-control[required] {
+  border: 1px solid red;
 }
 
-
-select.form-control:valid{
-    border: 1px solid #008565;
+select {
+  box-sizing: unset;
 }
 
-.error-message{
-    color: rgb(211, 28, 28);
+select.form-control:valid {
+  border: 1px solid #008565;
 }
 
-.success-border{
-    border-color:  #008565 !important;
+.error-message {
+  color: rgb(211, 28, 28);
+  font-size: 0.8rem;
 }
 
-.error-border{
-    border: 1px solid red;
+.success-border {
+  border-color: #008565 !important;
+}
+
+.error-border {
+  border: 1px solid red;
 }
 
 footer {
-    height: 5%;
-    background-color: #5c666f;
-    padding: 16px 32px;
+  grid-area: footer;
+  height: 44%;
+  background-color: #5c666f;
+  padding: 16px 32px;
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.submit-btn {
-    border: 2px solid rgb(0, 133, 101);
-    height: 100%;
-    border-radius: 0.2em;
-    background-color: rgb(0, 133, 101);
-    color: white;
+a {
+  text-decoration-color: transparent;
 }
 
-.hover:hover{
-    cursor: pointer;
-    box-shadow: 0 0 4px 4px rgba(0, 133, 101, 0.4);
+a:hover {
+  text-decoration: underline !important;
+  font-weight: 500;
 }
 
-.footer-links > a{
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
+.hover:hover {
+  cursor: pointer;
+  box-shadow: 0 0 4px 4px rgba(0, 133, 101, 0.4);
 }
 
-.footer-links > a:visited{
-    color: black;
+.footer-links > a {
+  color: black;
+  font-size: 16px;
+}
+
+.t-black {
+  color: black !;
+}
+
+.footer-links > a:visited {
+  color: black;
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 .d-flex {
-    display: flex;
+  display: flex;
 }
 
 .d-center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .d-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .gap-4 {
-    gap: 4px;
+  gap: 4px;
 }
 
 .gap-8 {
-    gap: 8px;
+  gap: 8px;
 }
 
 .gap-16 {
-    gap: 16px;
+  gap: 16px;
 }
 
 .gap-24 {
-    gap: 24px;
+  gap: 24px;
 }
 
 .p-32 {
-    padding: 32px 32px;
+  padding: 32px 0;
 }
 
 .w-96 {
-    width: 96px;
+  width: 96px;
 }
 
 .h-60 {
-    height: 60px;
+  height: 60px;
 }
 
-.margin-block{
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
+.align-center {
+  align-items: center;
 }
 
-.unset-margin{
-    margin: 0;
+.margin-block {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+.unset-margin {
+  margin: 0;
+}
+
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-size: 1.7rem !important;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .grid {
+    display: grid;
+    grid-template-areas:
+      "head"
+      "logo"
+      "content"
+      "footer";
+    grid-template-columns: auto;
+  }
+
+  main {
+    margin: 0 10px 0 10px;
+  }
+
+  .side {
+    grid-area: unset;
+    height: unset;
+  }
+
+  .title-head,
+  .logo {
+    height: 5vh !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .form-control {
+    width: 240px;
+    margin: 0.25rem;
+  }
+
+  .footer-links > a {
+    font-size: 0.75rem !important;
+  }
+
+  .margin-block {
+    max-width: 95%;
+  }
 }

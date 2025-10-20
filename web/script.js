@@ -126,4 +126,3 @@ function allValid(isValidString,isValidMail,isValidPhone,isValidInteger,isValidF
     filteredArray.forEach((e) => {e.nextElementSibling.classList.remove('d-none')});
     filteredArray.forEach((e) => {e.classList.remove('success-border') && e.classList.add('error-border')});
     }
-

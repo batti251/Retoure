@@ -21,9 +21,6 @@ function sendMail($fromName, $fromEmail, $subject, $body, $attachments = []) {
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../logs/php-error.log');
 
-
-
-
 try {
     $mail->isSMTP();
     $mail->Host       = $cfg['host'];
